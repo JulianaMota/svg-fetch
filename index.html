@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>svg</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>svg test time line</h1>
+
+    <div id="svg_timeline">
+      <div class="svgplaceholder" data-svgplaceholder="philosopher">movie1</div>
+      <div class="svgplaceholder" data-svgplaceholder="chamber">movie2</div>
+      <div class="svgplaceholder" data-svgplaceholder="prisoner">movie3</div>
+    </div>
+    <script>
+      //getBoundingClientRect() to get responsive size
+      window.addEventListener("DOMContentLoaded", loadSVG);
+
+      function loadSVG() {
+        console.log("load the svg");
+
+        fetch("timelinesvg.svg")
+          .then(res => res.text())
+          .then(svgdata => {
+            console.log(svgdata);
+
+            document
+              .querySelector("#svg_timeline")
+              .insertAdjacentHTML("afterbegin", svgdata);
+
+            const svgPlaceholder = document.querySelectorAll(".svgplaceholder");
+            console.log(svgPlaceholder);
+            svgPlaceholder.forEach(repalceSVGwithHTML);
+
+            // fitRetangule("#philosopher .HTML_placeholder", ".movie1");
+            // fitRetangule("#chamber .HTML_placeholder", ".movie2");
+            // fitRetangule("#prisoner .HTML_placeholder", ".movie3");
+          });
+      }
+
+      function repalceSVGwithHTML(htmlElement) {
+        //we got an HTMLelement with dta-svgplaceholder
+        //We need to find matching SVG element
+        // console.log(svgPlaceholder);
+        const svgId = htmlElement.dataset.svgplaceholder;
+        const svgSelector = "#" + svgId + " .HTML_placeholder";
+        console.log(svgId);
+        console.log(htmlElement);
+        const svgElement = document.querySelector(svgSelector);
+
+        fitRetangule(svgElement, htmlElement);
+      }
+
+      function fitRetangule(svgElement, htmlElement) {
+        htmlElement.style.left = svgElement.getAttribute("x") + "px";
+        htmlElement.style.top = svgElement.getAttribute("y") + "px";
+
+        htmlElement.style.width = svgElement.getAttribute("width") + "px";
+        htmlElement.style.height = svgElement.getAttribute("height") + "px";
+      }
+    </script>
+  </body>
+</html>

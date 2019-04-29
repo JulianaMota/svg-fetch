@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 900" style="enable-background:new 0 0 1600 900;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st1{fill:#FFF7E9;}
+	.st2{display:none;}
+	.st3{display:inline;}
+	.st4{fill:#FFF7E9;stroke:#000000;stroke-width:10;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st6{display:none;fill:none;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+	.st7{fill:none;}
+	.st8{font-family:'MyriadPro-Bold';}
+	.st9{font-size:32px;}
+	.st10{fill:none;stroke:#000000;stroke-width:5;stroke-miterlimit:10;}
+	.st11{fill:#FFFFFF;stroke:#000000;stroke-width:6;stroke-miterlimit:10;}
+</style>
+<g id="Layer_1">
+</g>
+<g id="timeline">
+	<g>
+		<line class="st0" x1="57.5" y1="594.8" x2="935.5" y2="594.8"/>
+		<line class="st1" x1="57.5" y1="594.8" x2="935.5" y2="594.8"/>
+	</g>
+	<g>
+		<line class="st0" x1="946.4" y1="594.5" x2="966.7" y2="594.5"/>
+		<line class="st1" x1="946.4" y1="594.5" x2="966.7" y2="594.5"/>
+	</g>
+	<g>
+		<line class="st0" x1="992" y1="594.5" x2="1012.3" y2="594.5"/>
+		<line class="st1" x1="992" y1="594.5" x2="1012.3" y2="594.5"/>
+	</g>
+	<g>
+		<line class="st0" x1="1042" y1="594.5" x2="1062.3" y2="594.5"/>
+		<line class="st1" x1="1042" y1="594.5" x2="1062.3" y2="594.5"/>
+	</g>
+	<g id="textlines" class="st2">
+		<g id="first" class="st3">
+		</g>
+		<g id="intro" class="st3">
+		</g>
+	</g>
+	<g id="bullets">
+		<circle class="st4" cx="124.6" cy="593.5" r="26.6"/>
+		<circle class="st4" cx="328.9" cy="593.5" r="26.6"/>
+		<circle class="st4" cx="535.7" cy="593.5" r="26.6"/>
+	</g>
+</g>
+<g id="movies">
+	<g id="prisoner">
+		<rect id="HTML_placeholder_2_" x="535.3" y="176.8" class="st5" width="368.6" height="146.1"/>
+		<rect x="553.7" y="238.1" class="st6" width="67.1" height="68.4"/>
+		<rect x="653.7" y="240.6" class="st7" width="182.3" height="53.2"/>
+		<text transform="matrix(1 0 0 1 653.7216 263.3399)" class="st2 st8 st9">2004</text>
+		<line class="st10" x1="534.5" y1="571.3" x2="534.5" y2="322.9"/>
+		<text transform="matrix(1 0 0 1 546.973 212.9847)" class="st2 st8 st9">Prisoner of Azkaban</text>
+	</g>
+	<g id="chamber">
+		<rect id="HTML_placeholder_1_" x="329.3" y="357.8" class="st11" width="368.6" height="146.1"/>
+		<rect x="347.7" y="419.1" class="st6" width="67.1" height="68.4"/>
+		<rect x="466.4" y="426.7" class="st7" width="182.3" height="53.2"/>
+		<text transform="matrix(1 0 0 1 466.3798 449.4158)" class="st2 st8 st9">2002</text>
+		<line class="st10" x1="329.5" y1="567.3" x2="329.5" y2="503.9"/>
+		<text transform="matrix(1 0 0 1 337.973 393.9973)" class="st2 st8 st9">Chamber of Secrets</text>
+	</g>
+	<g id="philosopher">
+		<rect id="HTML_placeholder" x="127.7" y="176.8" class="st5" width="368.6" height="146.1"/>
+		<rect x="146.1" y="238.1" class="st6" width="67.1" height="68.4"/>
+		<line class="st10" x1="127.9" y1="566.9" x2="127.9" y2="322.9"/>
+		<text transform="matrix(1 0 0 1 139.378 212.9847)" class="st2 st8 st9">The Philosopher’s Stone</text>
+		<rect x="246.1" y="240.6" class="st7" width="182.3" height="53.2"/>
+		<text transform="matrix(1 0 0 1 246.1266 263.3399)" class="st2 st8 st9">2001</text>
+	</g>
+</g>
+<g id="Layer_5">
+</g>
+</svg>

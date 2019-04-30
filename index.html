@@ -17,7 +17,9 @@
     </div>
     <script>
       //getBoundingClientRect() to get responsive size
-      window.addEventListener("DOMContentLoaded", loadSVG);
+      window.addEventListener("load", loadSVG);
+
+      window.addEventListener("resize", calulateSizes);
 
       function loadSVG() {
         console.log("load the svg");
@@ -31,14 +33,17 @@
               .querySelector("#svg_timeline")
               .insertAdjacentHTML("afterbegin", svgdata);
 
-            const svgPlaceholder = document.querySelectorAll(".svgplaceholder");
-            console.log(svgPlaceholder);
-            svgPlaceholder.forEach(repalceSVGwithHTML);
-
             // fitRetangule("#philosopher .HTML_placeholder", ".movie1");
             // fitRetangule("#chamber .HTML_placeholder", ".movie2");
             // fitRetangule("#prisoner .HTML_placeholder", ".movie3");
+            calulateSizes();
           });
+      }
+
+      function calulateSizes() {
+        const svgPlaceholder = document.querySelectorAll(".svgplaceholder");
+        console.log(svgPlaceholder);
+        svgPlaceholder.forEach(repalceSVGwithHTML);
       }
 
       function repalceSVGwithHTML(htmlElement) {
@@ -55,11 +60,19 @@
       }
 
       function fitRetangule(svgElement, htmlElement) {
-        htmlElement.style.left = svgElement.getAttribute("x") + "px";
-        htmlElement.style.top = svgElement.getAttribute("y") + "px";
+        const rect = svgElement.getBoundingClientRect();
 
-        htmlElement.style.width = svgElement.getAttribute("width") + "px";
-        htmlElement.style.height = svgElement.getAttribute("height") + "px";
+        // htmlElement.style.left = svgElement.getAttribute("x") + "px";
+        // htmlElement.style.top = svgElement.getAttribute("y") + "px";
+
+        // htmlElement.style.width = svgElement.getAttribute("width") + "px";
+        // htmlElement.style.height = svgElement.getAttribute("height") + "px";
+
+        htmlElement.style.left = rect.x + "px";
+        htmlElement.style.top = rect.y + "px";
+
+        htmlElement.style.width = rect.width + "px";
+        htmlElement.style.height = rect.height + "px";
       }
     </script>
   </body>

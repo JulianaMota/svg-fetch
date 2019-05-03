@@ -11,23 +11,77 @@
     <h1>svg test time line</h1>
 
     <div id="svg_timeline">
-      <div class="svgplaceholder" data-svgplaceholder="philosopher">movie1</div>
-      <div class="svgplaceholder" data-svgplaceholder="chamber">movie2</div>
-      <div class="svgplaceholder" data-svgplaceholder="prisoner">movie3</div>
+      <div class="svgplaceholder" data-svgplaceholder="philosopher"></div>
+      <div class="svgplaceholder" data-svgplaceholder="chamber"></div>
+      <div class="svgplaceholder" data-svgplaceholder="prisoner"></div>
     </div>
+
+    <template id="movie_template">
+      <!-- <article class="movieGrid"> -->
+      <h1 data-field="title">Harry Potter and the Philosopher's Stone</h1>
+      <h2 data-field="year">2001</h2>
+      <p data-field="director">Chris Columbus</p>
+      <img data-field="image" src="" alt="movie image" />
+      <!-- </article> -->
+    </template>
+
     <script>
       //getBoundingClientRect() to get responsive size
-      window.addEventListener("load", loadSVG);
+      window.addEventListener("DOMContentLoaded", loadSVG);
+      window.addEventListener("DOMContentLoaded", loadJSON);
 
       window.addEventListener("resize", calulateSizes);
 
+      function loadJSON() {
+        //fetch
+        fetch("data.json")
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            data.forEach(obj => {
+              console.log(obj);
+
+              const clone = document
+                .querySelector("#movie_template")
+                .content.cloneNode(true);
+
+              console.log(clone);
+
+              const dataFields = clone.querySelectorAll("[data-field]");
+              dataFields.forEach(element => {
+                const property = element.dataset.field;
+                // element.textContent = obj[field];
+
+                if (element.tagName === "IMG") {
+                  element.src = obj[property] + ".jpg";
+                } else {
+                  element.textContent = obj[property];
+                }
+              });
+
+              // clone.querySelector("[data-field=name]").textContent = obj.title;
+              // clone.querySelector("[data-field=year]").textContent = obj.year;
+              // clone.querySelector("[data-field=director]").textContent =
+              //   obj.director;
+              // clone.querySelector("[data-field=image]").src =
+              //   obj.image + ".jpg";
+
+              const destination = document.querySelector(
+                ".svgplaceholder[data-svgplaceholder=" + obj.id + "]"
+              );
+              console.log(destination);
+
+              destination.appendChild(clone);
+            });
+          });
+      }
       function loadSVG() {
         console.log("load the svg");
 
         fetch("timelinesvg.svg")
           .then(res => res.text())
           .then(svgdata => {
-            console.log(svgdata);
+            // console.log(svgdata);
 
             document
               .querySelector("#svg_timeline")
@@ -42,7 +96,7 @@
 
       function calulateSizes() {
         const svgPlaceholder = document.querySelectorAll(".svgplaceholder");
-        console.log(svgPlaceholder);
+        // console.log(svgPlaceholder);
         svgPlaceholder.forEach(repalceSVGwithHTML);
       }
 
@@ -52,8 +106,8 @@
         // console.log(svgPlaceholder);
         const svgId = htmlElement.dataset.svgplaceholder;
         const svgSelector = "#" + svgId + " .HTML_placeholder";
-        console.log(svgId);
-        console.log(htmlElement);
+        // console.log(svgId);
+        // console.log(htmlElement);
         const svgElement = document.querySelector(svgSelector);
 
         fitRetangule(svgElement, htmlElement);
